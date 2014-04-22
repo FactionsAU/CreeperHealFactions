@@ -3,7 +3,7 @@ package au.id.rleach.creeperhealfactions.timewarp;
 
 public class Linear extends Transition {
 
-    final int SPEED = 5;
+    final int SPEED = 10;
     
     public Linear(long start, long goal, PlayerTime pt) {
         super(start, goal, pt);
