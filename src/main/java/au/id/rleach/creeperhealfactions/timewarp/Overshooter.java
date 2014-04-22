@@ -5,7 +5,7 @@
  */
 package au.id.rleach.creeperhealfactions.timewarp;
 
-public class Overshooter {
+public class Overshooter extends Transition{
 
     private int acceleration;
     private int oldAcceleration;
@@ -43,12 +43,12 @@ public class Overshooter {
     * http://puu.sh/8iBIe.jpg paint drawing, if it is still up.
     **/
     Overshooter(long curTime, long goal, PlayerTime pt) {
-        this.pt = pt;
-        start(curTime, goal);
+        super(curTime,goal,pt);
     }
 
     //initialize the animation starting position/velocity/acceleration
-    private void start(long start, long end) {
+    @Override
+    void start(long start, long end) {
         position = start;
         goal = end;
         //Always towards the goal from the position
@@ -60,6 +60,7 @@ public class Overshooter {
     }
 
     //get the next position of the animation
+    @Override
     public long next() {
         //Always towards the goal from the position
         acceleration = Long.signum(goal - position);
@@ -91,7 +92,8 @@ public class Overshooter {
     }
 
     //resets a new goal whilst maintaining speed/momentum
-    void setGoal(long goal) {
+    @Override
+    public void setGoal(long goal) {
         start(this.position, goal);
         this.speed = speed;
     }
