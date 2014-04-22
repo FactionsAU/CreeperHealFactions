@@ -1,0 +1,6 @@
+name: CreeperHealFactions
+version: 0.0.1
+description: This plugin hooks Creeperheal to Factions allowing for "fun"
+author: ryan_the_leach
+
+main: au.id.rleach.creeperhealfactions.CreeperHealFactions
